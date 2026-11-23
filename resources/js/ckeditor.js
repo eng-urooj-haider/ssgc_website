@@ -40,48 +40,48 @@ import {
     TableToolbar,
     TextTransformation,
     TodoList,
-    Underline
-} from 'ckeditor5';
-import 'ckeditor5/ckeditor5.css';
+    Underline,
+} from "ckeditor5";
+import "ckeditor5/ckeditor5.css";
 /**
  * Create a free account with a trial: https://portal.ckeditor.com/checkout?plan=free
  */
-const LICENSE_KEY = 'GPL'; // or <YOUR_LICENSE_KEY>.
+const LICENSE_KEY = "GPL"; // or <YOUR_LICENSE_KEY>.
 
 const editorConfig = {
     toolbar: {
         items: [
-            'findAndReplace',
-            '|',
-            'heading',
-            '|',
-            'fontSize',
-            'fontFamily',
-            'fontColor',
-            'fontBackgroundColor',
-            '|',
-            'bold',
-            'italic',
-            'underline',
-            'strikethrough',
-            'code',
-            'removeFormat',
-            '|',
-            'specialCharacters',
-            'horizontalLine',
-            'link',
-            'insertTable',
-            'highlight',
-            '|',
-            'alignment',
-            '|',
-            'bulletedList',
-            'numberedList',
-            'todoList',
-            'outdent',
-            'indent'
+            "findAndReplace",
+            "|",
+            "heading",
+            "|",
+            "fontSize",
+            "fontFamily",
+            "fontColor",
+            "fontBackgroundColor",
+            "|",
+            "bold",
+            "italic",
+            "underline",
+            "strikethrough",
+            "code",
+            "removeFormat",
+            "|",
+            "specialCharacters",
+            "horizontalLine",
+            "link",
+            "insertTable",
+            "highlight",
+            "|",
+            "alignment",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "todoList",
+            "outdent",
+            "indent",
         ],
-        shouldNotGroupWhenFull: false
+        shouldNotGroupWhenFull: false,
     },
     plugins: [
         Alignment,
@@ -124,59 +124,59 @@ const editorConfig = {
         TableToolbar,
         TextTransformation,
         TodoList,
-        Underline
+        Underline,
     ],
     fontFamily: {
-        supportAllValues: true
+        supportAllValues: true,
     },
     fontSize: {
-        options: [10, 12, 14, 'default', 18, 20, 22],
-        supportAllValues: true
+        options: [10, 12, 14, "default", 18, 20, 22],
+        supportAllValues: true,
     },
     heading: {
         options: [
             {
-                model: 'paragraph',
-                title: 'Paragraph',
-                class: 'ck-heading_paragraph'
+                model: "paragraph",
+                title: "Paragraph",
+                class: "ck-heading_paragraph",
             },
             {
-                model: 'heading1',
-                view: 'h1',
-                title: 'Heading 1',
-                class: 'ck-heading_heading1'
+                model: "heading1",
+                view: "h1",
+                title: "Heading 1",
+                class: "ck-heading_heading1",
             },
             {
-                model: 'heading2',
-                view: 'h2',
-                title: 'Heading 2',
-                class: 'ck-heading_heading2'
+                model: "heading2",
+                view: "h2",
+                title: "Heading 2",
+                class: "ck-heading_heading2",
             },
             {
-                model: 'heading3',
-                view: 'h3',
-                title: 'Heading 3',
-                class: 'ck-heading_heading3'
+                model: "heading3",
+                view: "h3",
+                title: "Heading 3",
+                class: "ck-heading_heading3",
             },
             {
-                model: 'heading4',
-                view: 'h4',
-                title: 'Heading 4',
-                class: 'ck-heading_heading4'
+                model: "heading4",
+                view: "h4",
+                title: "Heading 4",
+                class: "ck-heading_heading4",
             },
             {
-                model: 'heading5',
-                view: 'h5',
-                title: 'Heading 5',
-                class: 'ck-heading_heading5'
+                model: "heading5",
+                view: "h5",
+                title: "Heading 5",
+                class: "ck-heading_heading5",
             },
             {
-                model: 'heading6',
-                view: 'h6',
-                title: 'Heading 6',
-                class: 'ck-heading_heading6'
-            }
-        ]
+                model: "heading6",
+                view: "h6",
+                title: "Heading 6",
+                class: "ck-heading_heading6",
+            },
+        ],
     },
     htmlSupport: {
         allow: [
@@ -184,32 +184,48 @@ const editorConfig = {
                 name: /^.*$/,
                 styles: true,
                 attributes: true,
-                classes: true
-            }
-        ]
+                classes: true,
+            },
+        ],
     },
-    licenseKey: 'GPL',
+    licenseKey: "GPL",
     link: {
         addTargetToExternalLinks: true,
-        defaultProtocol: 'https://',
+        defaultProtocol: "https://",
         decorators: {
             toggleDownloadable: {
-                mode: 'manual',
-                label: 'Downloadable',
+                mode: "manual",
+                label: "Downloadable",
                 attributes: {
-                    download: 'file'
-                }
-            }
-        }
+                    download: "file",
+                },
+            },
+        },
     },
-    placeholder: 'Type or paste your content here!',
+    placeholder: "Type or paste your content here!",
     table: {
-        contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
-    }
+        contentToolbar: [
+            "tableColumn",
+            "tableRow",
+            "mergeTableCells",
+            "tableProperties",
+            "tableCellProperties",
+        ],
+    },
 };
 
-ClassicEditor.create(document.querySelector('.rte1'), editorConfig);
-ClassicEditor.create(document.querySelector('.rte2'), editorConfig);
-ClassicEditor.create(document.querySelector('.rte3'), editorConfig);
-ClassicEditor.create(document.querySelector('.rte4'), editorConfig);
+// ClassicEditor.create(document.querySelector('.rte1'), editorConfig);
+// ClassicEditor.create(document.querySelector('.rte2'), editorConfig);
+// ClassicEditor.create(document.querySelector('.rte3'), editorConfig);
+// ClassicEditor.create(document.querySelector('.rte4'), editorConfig);
 
+// Expose for Livewire/Alpine components
+window.ClassicEditor = ClassicEditor;
+window.rteConfig = editorConfig;
+window.dispatchEvent(new Event("rte-loaded"));
+
+// Keep the old behaviour for normal (non-Livewire) pages
+[".rte1", ".rte2", ".rte3", ".rte4"].forEach((selector) => {
+    const el = document.querySelector(selector + ":not(.rte-livewire)");
+    if (el) ClassicEditor.create(el, editorConfig);
+});
